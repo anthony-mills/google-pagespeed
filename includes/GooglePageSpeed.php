@@ -39,6 +39,20 @@ class GooglePageSpeed {
 	}
 	
 	/**
+	 * 
+	 * Convert a number of bytes into something readable i.e 10 KB etc
+	 * 
+	 * @param int $amountBytes
+	 * 
+	 * @return string 
+	 */
+	function readableBytes($amountBytes) { 
+	    $byteBase = log($amountBytes) / log(1024);
+	    $amountNames = array('', 'k', 'M', 'G', 'T');   
+	
+	    return round(pow(1024, $byteBase - floor($byteBase)), 0) . $amountNames[floor($byteBase)];
+	} 	
+	/**
 	 *
 	 * Request the PageSpeed details on a URL
 	 * 
@@ -50,8 +64,7 @@ class GooglePageSpeed {
 		if (filter_var($pageUrl, FILTER_VALIDATE_URL) === FALSE) {
  		   die('<span class="error_msg">The URL provided is not valid.</span>');
 		} else {
-			$result = $this->_processRequest($pageUrl);
-			print_r($result);
+			return $this->_processRequest($pageUrl);
 		}
 	}
 	

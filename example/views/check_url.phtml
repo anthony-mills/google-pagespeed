@@ -9,6 +9,7 @@
 		     $(document).ready(function() {
 		                jQuery("#check_url").click(function () {
 		                     var pageUrl = jQuery("#page_url").val();
+		                     jQuery("#check_results").html('<div align="center"><img src="views/images/loading.gif"><br /> Generating page report...</div>');
 		                     jQuery.ajax({
 		                           type: 'POST',
 		                           url: '{script_url}',
