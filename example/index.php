@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST['page_url'])) {
-	$apiKey = 'MY API KEY';
+	$apiKey = 'GOOGLE API KEY';
 	require_once('../includes/GooglePageSpeed.php');
 	
 	$pageSpeed = new GooglePageSpeed($apiKey);

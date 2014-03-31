@@ -1,10 +1,11 @@
 <?php
 /**
-* Simple for retreiving the 
+* Simple wrapper class for retrieving page statistics from the Google page speed API 
 *
 * @package Google PageSpeed Wrapper
-* @author Anthony Mills
-* @copyright 2013 Anthony Mills ( anthony-mills.com )
+* @author Anthony Mills <me@anthony-mills.com>
+* @link https://github.com/anthony-mills/google-pagespeed
+* @copyright 2013 
 * @license GPL V3.0
 * @version 0.1
 */
@@ -52,6 +53,7 @@ class GooglePageSpeed {
 	
 	    return round(pow(1024, $byteBase - floor($byteBase)), 0) . $amountNames[floor($byteBase)];
 	} 	
+
 	/**
 	 *
 	 * Request the PageSpeed details on a URL
